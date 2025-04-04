@@ -1,0 +1,708 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIDÉLISATION INFAILLIBLE™ - Réduisez votre churn de 40% en 60 jours</title>
+    <style>
+        :root {
+            --primary-color: #4F46E5;
+            --secondary-color: #10B981;
+            --accent-color: #F59E0B;
+            --dark-color: #1F2937;
+            --light-color: #F9FAFB;
+            --error-color: #EF4444;
+            --success-color: #10B981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            background-color: #F9FAFB;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #818CF8);
+            color: white;
+            padding: 80px 0 100px;
+            text-align: center;
+        }
+        
+        .hero {
+            padding: 40px 0;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--primary-color);
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            background-color: #E3A008;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #4338CA;
+        }
+        
+        .btn-large {
+            padding: 18px 40px;
+            font-size: 1.4rem;
+        }
+        
+        .section {
+            padding: 80px 0;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .white-section {
+            background-color: white;
+        }
+        
+        .highlight-section {
+            background-color: #EEF2FF;
+        }
+        
+        ul {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card h3 {
+            margin-top: 0;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .testimonial {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: """;
+            font-size: 5rem;
+            color: #E5E7EB;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-family: Georgia, serif;
+        }
+        
+        .quote {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .author {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .faq-answer {
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #6B7280;
+            font-size: 2rem;
+        }
+        
+        .countdown {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .countdown h3 {
+            color: white;
+            margin-top: 0;
+        }
+        
+        .img-responsive {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .guarantee {
+            background-color: #ECFDF5;
+            border-left: 4px solid var(--success-color);
+            padding: 20px;
+            margin: 40px 0;
+            border-radius: 8px;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-accent {
+            color: var(--accent-color);
+        }
+        
+        .text-primary {
+            color: var(--primary-color);
+        }
+        
+        .mb-0 {
+            margin-bottom: 0;
+        }
+        
+        .mt-0 {
+            margin-top: 0;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #E5E7EB;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .module {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .module h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #E5E7EB;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .bonus {
+            background-color: #FEF3C7;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .bonus h3 {
+            color: var(--dark-color);
+        }
+        
+        .value {
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .btn-large {
+                padding: 15px 30px;
+                font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>FIDÉLISATION INFAILLIBLE™</h1>
+            <p style="font-size: 1.5rem; margin-bottom: 2rem;">Réduisez votre churn de 40% en moins de 60 jours</p>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Découvrez la méthode éprouvée qui a permis à plus de 150 entreprises SaaS de transformer leurs clients volatils en abonnés fidèles</p>
+            <a href="#inscription" class="btn btn-large">RÉSERVEZ VOTRE PLACE MAINTENANT</a>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h2>La vérité que personne n'ose vous révéler sur le churn</h2>
+            <p style="font-size: 1.3rem; font-weight: 600; color: var(--primary-color);">Savez-vous que 67% des entreprises SaaS perdent leurs clients avant même d'avoir rentabilisé leur coût d'acquisition?</p>
+            
+            <p>Chaque client qui s'en va ne représente pas seulement un revenu perdu, mais aussi:</p>
+            <ul>
+                <li>5 à 25 fois plus d'investissement pour le remplacer</li>
+                <li>Une réduction de votre valeur d'entreprise</li>
+                <li>Un signal négatif envoyé au marché</li>
+                <li>Une occasion manquée de générer des références</li>
+            </ul>
+            
+            <h3>Vous reconnaissez-vous dans ces situations?</h3>
+            <ul>
+                <li>Vous vous réveillez chaque matin avec l'angoisse de voir vos métriques de rétention</li>
+                <li>Vous avez investi des milliers d'euros en acquisition pour voir vos clients partir après quelques mois</li>
+                <li>Votre chiffre d'affaires stagne malgré tous vos efforts marketing</li>
+                <li>Vous êtes frustré de voir vos concurrents afficher des taux de rétention de 95% et plus</li>
+            </ul>
+            
+            <p style="font-weight: 600;">Si vous avez répondu oui à l'une de ces questions, cette formation est faite pour vous.</p>
+        </div>
+    </section>
+
+    <section class="section highlight-section">
+        <div class="container">
+            <h2>Les approches traditionnelles ne fonctionnent plus</h2>
+            <p>Vous avez peut-être déjà essayé:</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3 style="color: var(--error-color);">❌ Offrir des réductions</h3>
+                    <p>Pour retenir vos clients, mais cela ne fait qu'éroder votre marge et dévaloriser votre offre.</p>
+                </div>
+                
+                <div class="card">
+                    <h3 style="color: var(--error-color);">❌ Ajouter toujours plus de fonctionnalités</h3>
+                    <p>Qui complexifient votre produit sans résoudre le problème fondamental d'engagement.</p>
+                </div>
+                
+                <div class="card">
+                    <h3 style="color: var(--error-color);">❌ Multiplier les emails de relance</h3>
+                    <p>Qui finissent par irriter vos clients et accélèrent leur départ.</p>
+                </div>
+                
+                <div class="card">
+                    <h3 style="color: var(--error-color);">❌ Appeler vos clients qui partent</h3>
+                    <p>Trop tard, la décision est déjà prise et difficile à inverser à ce stade.</p>
+                </div>
+            </div>
+            
+            <div class="testimonial">
+                <p class="quote">Nous avions essayé toutes les approches classiques pour réduire notre churn sans succès. La Méthode des Trois Moments Critiques™ a changé la donne. Notre taux de rétention a augmenté de 37% en seulement 45 jours.</p>
+                <p class="author">Marie Dupont, CEO de TechFlow SaaS</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section white-section">
+        <div class="container">
+            <h2>Présentant: La Méthode des Trois Moments Critiques™</h2>
+            
+            <p>Le problème n'est pas le prix de votre offre ou le manque de fonctionnalités, mais l'absence d'une <strong>"Expérience de Valeur Perçue™"</strong> dans les 30 premiers jours.</p>
+            
+            <p>Notre formation révèle comment:</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>1. Identifier les moments décisifs</h3>
+                    <p>Découvrez les 3 moments clés où vos clients décident (consciemment ou non) de rester ou partir</p>
+                </div>
+                
+                <div class="card">
+                    <h3>2. Créer une dépendance positive</h3>
+                    <p>Techniques éprouvées pour rendre votre service indispensable dès les premiers jours</p>
+                </div>
+                
+                <div class="card">
+                    <h3>3. Transformer les frictions</h3>
+                    <p>Convertissez les points de friction en opportunités d'engagement et de fidélisation</p>
+                </div>
+                
+                <div class="card">
+                    <h3>4. Anticiper les annulations</h3>
+                    <p>Système d'alerte précoce pour détecter et inverser les intentions d'annulation</p>
+                </div>
+            </div>
+            
+            <img src="https://images.klipfolio.com/website/public/223cab88-4694-4a4f-8bc7-8d81fae1ee7f/customer-retention-dashboard.png" alt="Graphique montrant la réduction du churn grâce à notre méthode" class="img-responsive">
+            
+            <p style="font-style: italic; text-align: center;">Résultats réels d'un de nos clients après 60 jours d'application de notre méthode</p>
+        </div>
+    </section>
+
+    <section class="section highlight-section">
+        <div class="container text-center">
+            <h2>Résultats garantis en 60 jours ou moins</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3 style="color: var(--success-color);">✅ Réduction immédiate</h3>
+                    <p>15% des annulations précoces dès la première semaine</p>
+                </div>
+                
+                <div class="card">
+                    <h3 style="color: var(--success-color);">✅ Augmentation</h3>
+                    <p>Taux de rétention global de 30% en 90 jours</p>
+                </div>
+                
+                <div class="card">
+                    <h3 style="color: var(--success-color);">✅ Amélioration</h3>
+                    <p>Valeur client (LTV) de 47% sans acquisition supplémentaire</p>
+                </div>
+                
+                <div class="card">
+                    <h3 style="color: var(--success-color);">✅ ROI minimum</h3>
+                    <p>400% sur l'investissement dans cette formation</p>
+                </div>
+            </div>
+            
+            <a href="#inscription" class="btn btn-large">JE VEUX CES RÉSULTATS</a>
+        </div>
+    </section>
+
+    <section class="section white-section">
+        <div class="container">
+            <h2>Ce que contient la formation FIDÉLISATION INFAILLIBLE™</h2>
+            
+            <div class="module">
+                <h3>MODULE 1: COMPRENDRE LE CHURN ET SES VÉRITABLES CAUSES</h3>
+                <ul>
+                    <li>La "Théorie du Sablier Percé™" pour visualiser les fuites clients</li>
+                    <li>Les 3 types de churn et comment les identifier dans vos données</li>
+                    <li>Le "Système des Points de Friction™" pour cartographier votre parcours client</li>
+                    <li><strong>Atelier pratique:</strong> Calculer votre véritable coût de churn (bien au-delà des revenus perdus)</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <h3>MODULE 2: LA MÉTHODE DES TROIS MOMENTS CRITIQUES™</h3>
+                <ul>
+                    <li>Identifier les 3 moments décisifs dans le parcours de vos clients</li>
+                    <li>Le "Moment Eurêka™": comment créer une révélation de valeur dans les 7 premiers jours</li>
+                    <li>La "Technique de l'Ancrage Émotionnel™" pour créer une dépendance positive</li>
+                    <li>Le "Point de Non-Retour™": rendre votre service indispensable avant le 2ème mois</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <h3>MODULE 3: STRATÉGIES D'ONBOARDING ANTI-CHURN</h3>
+                <ul>
+                    <li>La "Méthode de la Serviette Mouillée™" pour un onboarding irrésistible</li>
+                    <li>Créer une séquence d'activation en 5 étapes qui garantit l'engagement</li>
+                    <li>Le "Système des Petites Victoires™" pour générer des succès rapides</li>
+                    <li><strong>Atelier pratique:</strong> Concevoir votre séquence d'onboarding personnalisée</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <h3>MODULE 4: DÉTECTION PRÉCOCE ET INTERVENTION</h3>
+                <ul>
+                    <li>Les 7 signaux d'alerte qui prédisent une annulation avec 83% de précision</li>
+                    <li>La "Loi du Thermomètre d'Engagement™" pour mesurer la santé de vos comptes</li>
+                    <li>Mettre en place un système d'alerte automatisé sans compétences techniques</li>
+                    <li>Scripts d'intervention: que dire exactement quand un client montre des signes de désengagement</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <h3>MODULE 5: TRANSFORMATION DES ANNULATIONS EN RÉTENTION</h3>
+                <ul>
+                    <li>La "Technique du Pivot de Valeur™" pour sauver 60% des annulations</li>
+                    <li>Comment transformer une demande d'annulation en opportunité d'amélioration</li>
+                    <li>Le "Script des 3 Questions™" qui change la perspective du client</li>
+                    <li><strong>Atelier pratique:</strong> Simulation de conversation de rétention</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <h3>MODULE 6: IMPLÉMENTATION ET MESURE</h3>
+                <ul>
+                    <li>Plan d'action en 30/60/90 jours pour réduire votre churn</li>
+                    <li>Les 5 KPIs essentiels à suivre pour mesurer votre succès</li>
+                    <li>Comment ajuster votre stratégie en fonction des résultats</li>
+                    <li>La "Méthode de l'Amélioration Continue™" pour maintenir un faible taux de churn</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section highlight-section">
+        <div class="container">
+            <h2>BONUS EXCLUSIFS (Valeur: 1.997€)</h2>
+            
+            <div class="bonus">
+                <h3>BONUS #1: AUDIT DE RÉTENTION PERSONNALISÉ</h3>
+                <p class="value">Valeur: 997€</p>
+                <p>Notre équipe analysera votre processus actuel et identifiera vos opportunités d'amélioration spécifiques</p>
+            </div>
+            
+            <div class="bonus">
+                <h3>BONUS #2: BIBLIOTHÈQUE DE SCRIPTS ET TEMPLATES</h3>
+                <p class="value">Valeur: 497€</p>
+                <p>Tous les scripts d'emails, messages in-app et appels téléphoniques prêts à l'emploi</p>
+            </div>
+            
+            <div class="bonus">
+                <h3>BONUS #3: ACCÈS À LA COMMUNAUTÉ PRIVÉE</h3>
+                <p class="value">Valeur: 297€</p>
+                <p>Échangez avec d'autres professionnels et bénéficiez de conseils personnalisés</p>
+            </div>
+            
+            <div class="bonus">
+                <h3>BONUS #4: SESSIONS DE QUESTIONS/RÉPONSES MENSUELLES</h3>
+                <p class="value">Valeur: 597€</p>
+                <p>Obtenez des réponses à vos questions spécifiques lors de nos sessions live mensuelles</p>
+            </div>
+            
+            <img src="https://www.geckoboard.com/uploads/pirate-metrics-aarrr-dashboard-example.png" alt="Tableau de bord de rétention client" class="img-responsive">
+            
+            <p style="font-style: italic; text-align: center;">Exemple de tableau de bord de suivi fourni dans la formation</p>
+        </div>
+    </section>
+
+    <section class="section white-section">
+        <div class="container">
+            <h2>Ce que disent nos clients</h2>
+            
+            <div class="grid">
+                <div class="testimonial">
+                    <p class="quote">Notre churn est passé de 8,7% à 2,3% en 60 jours. Cela représente 437.000€ de revenus récurrents supplémentaires sur l'année.</p>
+                    <p class="author">Thomas Martin, Directeur Marketing, DataFlow</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="quote">J'étais sceptique au début, mais les résultats parlent d'eux-mêmes. Notre taux de rétention a augmenté de 35% et notre LTV a presque doublé.</p>
+                    <p class="author">Sophie Leclerc, Fondatrice, SaaS Solutions</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="quote">Au-delà des chiffres, c'est toute la relation avec nos clients qui s'est transformée. Ils sont maintenant nos meilleurs ambassadeurs.</p>
+                    <p class="author">Alexandre Durand, COO, TechInnovate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section highlight-section">
+        <div class="container">
+            <h2>Notre garantie satisfaction</h2>
+            
+            <div class="guarantee">
+                <h3 style="color: var(--success-color);">Garantie "Résultats ou Remboursé"</h3>
+                <p>Nous sommes tellement confiants dans l'efficacité de notre méthode que nous vous offrons une garantie "résultats ou remboursé".</p>
+                
+                <p><strong>Si vous n'observez pas une réduction d'au moins 15% de votre taux de churn dans les 60 jours suivant l'application de notre méthode, nous vous remboursons intégralement.</strong></p>
+                
+                <p style="font-size: 0.9rem; font-style: italic;">Conditions: avoir suivi l'intégralité de la formation et mis en place les recommandations</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section white-section">
+        <div class="container">
+            <h2>FAQ</h2>
+            
+            <div class="faq-item">
+                <p class="faq-question">À qui s'adresse cette formation?</p>
+                <p class="faq-answer">Cette formation s'adresse aux entreprises qui proposent des produits ou services par abonnement: SaaS, abonnements e-commerce, services récurrents, etc. Elle est particulièrement efficace pour les entreprises ayant déjà au moins 100 clients actifs.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">Combien de temps faut-il pour voir des résultats?</p>
+                <p class="faq-answer">Nos clients constatent généralement une amélioration mesurable dès les 14 premiers jours. Les résultats complets se manifestent généralement entre 45 et 60 jours.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">Faut-il des compétences techniques particulières?</p>
+                <p class="faq-answer">Non. Notre méthode est conçue pour être implémentée par des équipes marketing, vente ou relation client sans expertise technique particulière. Nous fournissons tous les outils et templates nécessaires.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">Combien de temps faut-il consacrer à la formation?</p>
+                <p class="faq-answer">La formation complète représente environ 6 heures de contenu. L'implémentation peut être réalisée en consacrant seulement 2 heures par semaine.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">La méthode fonctionne-t-elle aussi pour les petites entreprises?</p>
+                <p class="faq-answer">Absolument! Bien que certaines techniques soient plus efficaces à grande échelle, nous adaptons notre approche aux entreprises de toutes tailles. Nous avons des cas de succès avec des startups de 5 personnes comme avec des entreprises de plusieurs centaines d'employés.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">Que se passe-t-il après mon inscription?</p>
+                <p class="faq-answer">Vous recevrez immédiatement un accès à notre plateforme de formation en ligne, ainsi qu'une invitation à notre communauté privée. Vous pourrez commencer dès aujourd'hui et avancer à votre rythme.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="inscription" class="section highlight-section text-center">
+        <div class="container">
+            <h2>Investissement</h2>
+            
+            <p>Pour transformer complètement votre stratégie de rétention et sécuriser vos revenus récurrents:</p>
+            
+            <p class="original-price">2.997€</p>
+            <p class="price">1.497€</p>
+            <p>(Offre de lancement limitée)</p>
+            
+            <p><em>Économisez 1.500€ en agissant maintenant</em></p>
+            
+            <p>Cet investissement sera rentabilisé dès les premiers clients que vous aurez réussi à fidéliser.</p>
+            
+            <div class="countdown">
+                <h3>🔥 OFFRE SPÉCIALE LIMITÉE DANS LE TEMPS 🔥</h3>
+                <p>Cette offre expire le 15 avril 2025</p>
+                <p style="font-weight: 700; font-size: 1.2rem; margin-top: 15px;">Nombre de places restantes: 17/50</p>
+            </div>
+            
+            <a href="#" class="btn btn-large btn-primary">OUI, JE VEUX RÉDUIRE MON CHURN DE 40% EN 60 JOURS</a>
+            
+            <p style="font-size: 0.9rem; margin-top: 10px;">Paiement 100% sécurisé - Accès immédiat à la formation</p>
+        </div>
+    </section>
+
+    <section class="section white-section">
+        <div class="container text-center">
+            <h2>ATTENTION: Chaque jour d'hésitation vous coûte des clients</h2>
+            
+            <p>Si votre entreprise génère 50.000€ de revenus mensuels avec un churn de 10%, chaque mois qui passe vous fait perdre 5.000€ de revenus récurrents.</p>
+            
+            <p style="font-weight: 700; font-size: 1.2rem; color: var(--primary-color);">En réduisant votre churn à 6%, vous économiserez 2.000€ par mois, soit 24.000€ par an.</p>
+            
+            <p>N'attendez pas de perdre davantage de clients et de revenus. Rejoignez notre formation dès aujourd'hui et commencez à voir des résultats concrets en moins de 30 jours.</p>
+            
+            <a href="#inscription" class="btn btn-large">RÉSERVEZ VOTRE PLACE MAINTENANT</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 FIDÉLISATION INFAILLIBLE™ | Tous droits réservés</p>
+            <p>
+                <a href="#">Mentions légales</a> | 
+                <a href="#">Politique de confidentialité</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
+```
+
+Ce code HTML crée une page de vente élégante et professionnelle avec:
+
+1. Un design moderne utilisant des dégradés, ombres et animations subtiles
+2. Une palette de couleurs professionnelle avec des accents pour attirer l'attention
+3. Une structure claire avec des sections bien délimitées
+4. Des éléments de design qui renforcent la crédibilité (témoignages, garantie, FAQ)
+5. Des appels à l'action stratégiquement placés
+6. Des éléments d'urgence et de rareté (compte à rebours, places limitées)
+7. Une mise en page responsive qui s'adapte aux différentes tailles d'écran
+
+Pour utiliser cette page, il suffit de copier ce code dans un fichier HTML et de le mettre en ligne sur votre hébergement web. Vous pouvez également personnaliser davantage les couleurs, polices et images selon votre identité de marque.
+
